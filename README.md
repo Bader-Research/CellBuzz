@@ -26,16 +26,15 @@ processors and vector architectures. In our design we utilize the
 naive Cooley-Tukey radix-2 Decimate in Frequency algorithm. The
 algorithm runs in logN stages and each stage requires O(N)
 computation, where N is the input size.
-Reference:
 
--- "[FFTC: Fastest Fourier Transform for the IBM Cell Broadband
+    - "[FFTC: Fastest Fourier Transform for the IBM Cell Broadband
    Engine](https://davidbader.net/publication/2007-ba/)," David
    A. Bader and Virat Agarwal, The 14th Annual IEEE International
    Conference on High Performance Computing (HiPC 2007), S. Aluru et
    al., (eds.), Springer-Verlag LNCS 4873, 172-184, Goa, India,
    December 18-21, 2007.
 
--- "[Computing Discrete Transforms on the Cell Broadband
+    - "[Computing Discrete Transforms on the Cell Broadband
    Engine](https://davidbader.net/publication/2009-bak/)," David
    A. Bader, Virat Agarwal, and Seunghwa Kang, Parallel Computing,
    35(3):119-137, 2009.
@@ -59,9 +58,8 @@ processor by 9.1 times for the lossless case and 15 times for the
 lossy case. We also provide the experimental results on one IBM QS20
 blade with two Cell/B.E. chips and the performance comparison with the
 existing JPEG2000 encoder for the Cell/B.E.
-Reference:
 
--- "[Optimizing JPEG2000 Still Image Encoding on the Cell Broadband
+    - "[Optimizing JPEG2000 Still Image Encoding on the Cell Broadband
    Engine](https://davidbader.net/publication/2008-kb/)," Seunghwa
    Kang and David A. Bader, 37th International Conference on Parallel
    Processing (ICPP), Portland, OR, September 8-12, 2008.
@@ -96,9 +94,8 @@ effort is required to exploit Cell processor's unique architecture.
     achieves a speedup of over 10.545 compared with a PPE-only
     implementation. Our source code is freely- available through
     SourceForge under the CellBuzz project.
-    Reference:
 
--- [High Performance MPEG-2 Software Decoder on the Cell Broadband
+    - [High Performance MPEG-2 Software Decoder on the Cell Broadband
    Engine](https://davidbader.net/publication/2008-b-pa/)," David
    A. Bader and Sulabh Patel, 22nd IEEE International Parallel and
    Distributed Processing Symposium (IPDPS), Miami, FL, April 14-18,
@@ -148,9 +145,8 @@ effort is required to exploit Cell processor's unique architecture.
     file-compression application based on the zlib library. For our
     Cell/B.E. implementation of gzip, we achieve an average speedup of
     2.9 in compression over current workstations.  
-Reference: 
 
--- "[High Performance Combinatorial Algorithm Design on the Cell
+    - "[High Performance Combinatorial Algorithm Design on the Cell
    Broadband Engine
    Processor](https://davidbader.net/publication/2007-bamk/),"
    D.A. Bader, V. Agarwal, K. Madduri, and S. Kang, Parallel
