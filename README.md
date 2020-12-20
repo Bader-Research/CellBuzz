@@ -98,8 +98,7 @@ effort is required to exploit Cell processor's unique architecture.
     - [High Performance MPEG-2 Software Decoder on the Cell Broadband
    Engine](https://davidbader.net/publication/2008-b-pa/)," David
    A. Bader and Sulabh Patel, 22nd IEEE International Parallel and
-   Distributed Processing Symposium (IPDPS), Miami, FL, April 14-18,
-   2008.
+   Distributed Processing Symposium (IPDPS), Miami, FL, April 14-18, 2008.
 
 - **rc5**: RC5 is a block cipher that was originally designed by
     Ronald Rivest
