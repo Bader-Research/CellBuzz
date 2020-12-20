@@ -1,0 +1,18 @@
+Mpeg2cell is an MPEG2 decoder for the IBM Cell Broadband Engine.
+
+Mpeg2cell is based on MPEG-2 Encoder / Decoder, Version 1.2, July 19, 1996, and mpeg2play, (C) Stefan Eckart, stefan@lis.e-technik.tu-muenchen.de.
+
+The majority of the code base is taken from mpeg2decode while some optimization ideas are taken from mpeg2play
+
+The project runs with Cell SDK 3.0 using the gcc and IBM xlc compiler. The largest tested video file has a resolution of 704x480. Decoding files larger than this will probably require implementing a software cache system on the SPE side as the local store can easily fill up.
+
+This Cell-based implementation has been completed by Sulabh Patel and
+David A. Bader.
+
+
+Building:
+The make process is configured through the top level file Makefile.defs. Here, you will find various compile options, including the option to change the compiler used, optimization flags, verbose output support, etc.
+Build the project using the "make" command.
+
+Running the code:
+Refer to the manual of mpeg2decode. mpeg2cell has identical runtime options as mpeg2decode, except that support for enhancement layers has been removed.

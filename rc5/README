@@ -1,0 +1,23 @@
+RC5 is a block cipher that was originally designed by Ronald Rivest [paper](http://theory.lcs.mit.edu/~cis/pubs/rivest/rc5.ps). We have implemented and optimized the RC5 encryption/decryption library for the Sony-Toshiba-IBM Cell Broadband Engine. RC5 is widely used in message encryption, digital signatures, stream encryption, internet e-commerce, file encryption, electronic cash, etc.
+
+This library has been implemented by Virat Agarwal and David A. Bader. This is compatible with Cell SDK 3.0.
+
+
+The directory is structured as follows:
+1. src:
+This contains the source file for the encryption and decryption library. 'rc5.h' lists the various functions that can be used from this library.
+2. example:
+This contains a file 'example.c' which demonstrates how this library should be used. It initializes an initial array of 2^21 elements, encrypts them and then decrypts them. The library also allows you to check the correct of the output by a single function call. (Please use powers of 2 input).
+
+Installing the Code : 
+In the example directory
+1. Specify path to 'make.footer'
+-> export MAKE_FOOTER = <path to make.footer>
+
+2. make
+
+Running the code :
+- The executable formed is 'example'
+- For profiling use the -DPROFILING flag (Makefile in spu directory).
+
+

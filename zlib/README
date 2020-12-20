@@ -1,0 +1,37 @@
+ZLIB for Cell, provided here has been extended from the ZLIB library  and optimized for the IBM Cell Broadband Engine.  This extension has been programmed by Seunghwa Kang, Ph.D. student under the guidance of Dr. David A. Bader, College of Computing, Georgia Tech (http://www.cc.gatech.edu/~bader). ZLIB version 1.2.3 (available at http://www.zlib.net/) has been used as the base library for this extension. 
+
+This is version 2.0 of the Cell optimized zlib library and compatible with Cell SDK 3.0.
+
+The various optimization techniques used include SIMDization, loop unrolling, branch hints, etc. The code is also parallelized to use the multiple cores. We achieved load balancing by creating a work queue shared by all SPEs.
+
+This library includes the zlib library source files, zlib header files, and an example program. The example program is based on minigzip program included in zilb-1.2.3.
+
+zlib directory is expected to be placed under /opt/ibm/cell-sdk/prototype/src/lib/cellbuzz/ or environment variable CELL_TOP needs to be set appropriately. In order to compile the program, type "make" under the zlib directory.
+
+The zlib library for the Cell PPE(libz_ppu.a) will be generated under 'src/ppu', the zlib library for Cell SPE(libz_spu.a) will be generated under 'src/spu'. The SPE modules, 'minigzip_spu_compress' and 'minigzip_spu_decompress' will be generated under 'example/spu_compress' and 'example/spu_decompress', and the final example application, 'minigzip', will be generated under 'example/ppu'.
+
+Following is the usage of minigzip program.
+
+minigzip [-1 to -9] [-d] [-r] [-h] [-f] [-t1 to -t8] [-b0 to -b9] [file name]
+
+-1 to -9
+	Set the compression level. Use -1 for the fastest compression, but the worst compression ratio and -9 for the slowest compression but the best compression ratio. This option is disregarded for decompression.
+
+-d
+	Decompress the file.
+
+-r
+	Use RLE(Run Length Encoding) instead of LZ77. This option is disregarded for decompression.
+
+-h
+	Use Huffman coding only. This option is disregarded for decompression.
+
+-f
+	Set filtered mode. Do not encode the matched string less than 5 bytes to (length, distance) pair. Default is 3 bytes. This option is disregarded for decompression.
+
+-t1 to -t8
+	Set maximum number of SPE threads to use. If block size is set to zero(look for -b0 to -b9), only a single thread is used for compression regardless of this option. Similarly, if a target file is compiled without block size set, only a single thread is used for decompression. Also, if the total number of blocks is smaller than the number of threads, only the number of threads equal to the number of blocks are used.
+
+-b0 to -b9
+	Set block size from 100KB(-b1) to 900KB(-b9) or 0. 100KB to 900KB block size range is same as bzip2. Setting block size to small value benefits in load balancing between multiple SPE threads but increases compressed file size. Larger block size benefits in compression ratio, but could cause load imbalance, especially for small size files. If size is set to 0, then the whole input file will be compressed as a single block. We can achieve best compression ratio with this option, but only a single SPE will be used for compression. This option is disregarded for decompression.
+

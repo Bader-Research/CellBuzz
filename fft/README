@@ -1,0 +1,20 @@
+Fast Fourier Transform (FFT) is an efficient algorithm that is used for computing Discrete Fourier Transform. FFT is of primary importance and a fundamental kernel in many computationally intensive scientific applications such as computer tomography, data filtering and fluid dynamics. Another important application area of FFTs is in spectral analysis of speech, sonar, radar, seismic and vibration detection. FFTs are also used in digital filtering, signal decomposition, and in solution of partial differential equations. The performance of these applications rely heavily on the availability of a fast routine for Fourier Transforms. There are several algorithmic variants of the FFTs that have been well studied for parallel processors and vector architectures. In our design we utilize the naive Cooley-Tukey radix-2 Decimate in Frequency algorithm. The algorithm runs in logN stages and each stage requires O(N) computation, where N is the input size.
+
+We have a efficient parallel implementation of FFT that run for several thousand input points. Our design tries to optimize computation of a single FFT rather than doing multiple FFTs on the various SPEs. For detailed explanation of the algorithmic design please refer to the technical report. This code is compatible with Cell SDK 3.0.
+
+We have a test file that uses the FFT routine. This file is in ppu/fft_ppu.c
+The main routine can be modified to take input from a file.
+Installing the Code : 
+
+1. Specify path to 'make.footer'
+-> export MAKE_FOOTER = <path to make.footer>
+
+2. make
+
+Running the code :
+- The executable formed is 'ppu/fft'
+- The default is initializing to an FFT of size 4k. (initialize(12)).
+- For checking correctness please use -DCHECK_C flag (Makefile in ppu directory) during make
+- For profiling use the -DPROFILING flag (Makefile in ppu and spu directory).
+
+

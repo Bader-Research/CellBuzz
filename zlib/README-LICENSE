@@ -1,0 +1,5 @@
+ZLIB for Cell, provided here has been extended from the ZLIB library  and optimized for the IBM Cell Broadband Engine.  This extension has been programmed by Seunghwa Kang and David A. Bader. ZLIB version 1.2.3 (available at http://www.zlib.net/) has been used as the base library for this extension.
+
+ZLIB for Cell is a free software; you can redistribute it and/or modify it under the terms of the licensing requirement of the original ZLIB library and GNU General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.
+
+The author would not take any responsibility for the damages caused by using the library including, but not limited to, error due to program bugs, copyright or patent issues.
